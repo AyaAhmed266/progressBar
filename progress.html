@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  *{
+      box-sizing: border-box;
+  }
+  body{
+     background:linear-gradient(120deg,#2a5674, #8e44ad);
+      padding: 0;
+      margin: 0;
+  }
+  .percent-count{
+      width: 400px;
+      height: 100px;
+      margin: 100px auto;
+      font-size: 50px;
+      text-align: center;
+      color: #fff;
+  }
+  .progress-bar{
+      width: 506px;
+      height: 26px;
+      background: rgb(181, 182, 182);
+      border-radius: 13px;
+      margin: 40px auto;
+      padding: 3px;
+    
+  }
+  .progress{
+      width: 25px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: steelblue;
+  }
+  button{
+  position: relative;
+  width: 23%;
+  height: 50px;
+  border: 1px solid;
+  background:  linear-gradient(120deg,#2980b9, #8e44ad);
+  border-radius: 4px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  margin: 20px;
+  margin-left: 526px;
+
+  
+}
+button:hover{
+  border-color: #2691d9;
+  transition: .5s;
+  background: steelblue;
+}
+
+    </style>
+</head>
+<body>
+    <div id="percentCount" class="percent-count"> 0 %</div>
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+    <button id="btn">DashBoard</button>
+    <script>
+        function progress(){
+            var prg = document.getElementById('progress');
+            var percent = document.getElementById('percentCount');
+            var counter = 5;
+            var progress = 25;
+            var id = setInterval(frame , 1000);
+
+            function frame(){
+                if(progress==500 && counter==100){
+                    clearInterval(id);
+                }else{
+                    progress += 5;
+                    counter += 1;
+                    prg.style.width = progress + 'px';
+                    percent.innerHTML = counter + '%'
+
+                }
+
+            }
+        }
+        progress();
+    </script>
+</body>
+</html>
