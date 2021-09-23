@@ -13,6 +13,8 @@
      background:linear-gradient(120deg,#2a5674, #8e44ad);
       padding: 0;
       margin: 0;
+      height:100vh;
+      overflow:hidden;
   }
   .percent-count{
       width: 400px;
@@ -60,15 +62,20 @@ button:hover{
   transition: .5s;
   background: steelblue;
 }
+form{
+    padding:0 40px;
+    box-sizing:border-box;
 
     </style>
 </head>
 <body>
+    <form>
     <div id="percentCount" class="percent-count"> 0 %</div>
     <div class="progress-bar">
         <div class="progress" id="progress"></div>
     </div>
     <button id="btn">DashBoard</button>
+    </form>
     <script>
         function progress(){
             var prg = document.getElementById('progress');
